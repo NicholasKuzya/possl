@@ -1,0 +1,144 @@
+.header {
+    padding: 20px 0;
+    background-color: #fff;
+    font-family: "Roboto";
+    font-weight: 400;
+    border-bottom: 1px solid #dfe2ed;
+    // .header-logo
+    &-logo {
+        width: 160px;
+        height: 43px;
+    }
+    // .header-toggle
+    &-toggle {
+        display: none;
+    }
+    .dropdown--mobile {
+        display: none;
+        .dropdown__toggle {
+            gap: 0 5px;
+        }
+    }
+    // .header-navber
+    &-navbar {
+        // .header-navber__list
+        &__list {
+            gap: 0 50px;
+            .list {
+                // .list__item
+                &__item {
+                    position: relative;
+                    font-size: 18px;
+                    color: #000;
+                    &:last-child {
+                        padding-left: 80px;
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            width: 1px;
+                            height: 100%;
+                            background-color: #dfe2ed;
+                            left: 15px;
+                        }
+                    }
+                    .dropdown {
+                        // .dropdown__toggle
+                        &__toggle {
+                            gap: 0 10px;
+                        }
+                    }
+                }
+                // .list__configurator
+                &__configurator {
+                    font-size: 14px;
+                    padding: 2px 6px;
+                    background-color: #ce5555;
+                    border-radius: 100%;
+                    color: #fff;
+                    margin-left: 10px;
+                }
+                // .list__link
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .header {
+        // .header-logo
+        &-logo {
+            width: 120px;
+            height: 40px;
+        }
+        // .header-navbar
+        &-navbar {
+            // .header-navbar__list
+            &__list {
+                gap: 0 30px;
+                .list {
+                    // .list__item
+                    &__item {
+                        &:last-child {
+                            padding-left: 50px;
+                            &::before {
+                                left: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        // .header--active
+        &--active {
+            .header-navbar {
+                display: block;
+            }   
+        }
+        .wrapper {
+            flex-wrap: wrap;
+        }
+        // .dropdown--mobile
+        .dropdown--mobile {
+            display: block;
+        }
+        // .header-toggle
+        &-toggle {
+            display: block;
+        }
+        // .header-navbar
+        &-navbar {
+            width: 100%;
+            display: none;
+            background-color: #fff;
+            margin-top: 10px;
+
+            // .header-navbar__list
+            &__list {
+                display: block;
+                .list {
+                    // .list__item
+                    &__item {
+                        padding: 10px 0;
+                        padding-left: 40%;
+                        &.dropdown {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .header {
+        .btn--blue {
+            padding: 10px;
+        }
+    }
+}
